@@ -74,11 +74,11 @@
         cursor: pointer;
         box-shadow: #5D3E29;
         box-shadow: 0px 0px 61px -14px rgba(0,0,0,0.75);
-        transition: all 0.5s ease-in-out;
+        transition: all 0.4s ease-in-out;
     }
 
     .card:hover {
-        transition: all 0.5s ease-in-out;
+        transition: all 0.4s ease-in-out;
         transform: scale(1.1);
     }
 
@@ -86,6 +86,7 @@
         align-self: center;
         position: absolute;
         bottom: 39px;
+        color: whitesmoke;
     }
 
 }
