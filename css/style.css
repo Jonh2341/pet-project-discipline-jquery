@@ -21,6 +21,11 @@
         font-weight: 400;
         text-align: center;
     }
+
+    .card.on {
+        height: 90%;
+        
+    }
     
     .block{
         width: 100%;
