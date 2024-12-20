@@ -27,6 +27,10 @@
         
     }
     
+    .margin-block{
+        margin: 10px;
+    }
+
     .block{
         width: 100%;
         height: 231px;
