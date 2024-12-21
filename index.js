@@ -10,7 +10,9 @@ $(document).ready(function () {
     if ($this.hasClass("off")) {
       $this.removeClass("off").addClass("on");
       if ($this.hasClass("goal-builder")) {
-        $this.html("<span>New HTML for goal builder</span>");
+        $this.html(
+          "<div class='wrap-card'><div class='top-card'><p class='answer-p-first answer-p'>goal: </p><p class='answer-p-second answer-p'>deadline: </p><p class='answer-p-last answer-p'>plan: </p></div><button class='btn-start' type='button'>start</button></div>"
+        );
         // при класі 'goal-builder' встанолюємо HTML, для кожного класу свій HTML
       } else if ($this.hasClass("calculator")) {
         $this.html("<span>New HTML for calculator</span>");
@@ -27,10 +29,6 @@ $(document).ready(function () {
       } else {
         $this.html("<span>block is undefined</span>");
       }
-    } else {
-      $this.removeClass("on").addClass("off");
-      $this.css("color", "");
-      $this.html(originalText); // Відновлюємо початковий текст
     }
 
     if ($this.hasClass("on")) {
@@ -39,9 +37,40 @@ $(document).ready(function () {
       $(".off").css("display", "");
     }
 
-    function goalBuilder() {}
-
     console.log($this.attr("class"));
+
+    $('.btn-start').on('click', function () {
+      let goalQuestionFirst = prompt('write a goal');
+      let goalQuestionSecond = prompt('write a deadline');
+      let goalQuestionLast = prompt('write a plan');
+
+      $('.answer-p-first').append(goalQuestionFirst);
+      $('.answer-p-second').append(goalQuestionSecond);
+      $('.answer-p-last').append(goalQuestionLast);
+    });
+  });
+
+  $('.card').on('dblclick', function () {
+    let $this = $(this);
+    let originalText = $this.data("original-text"); // Зберігаємо початковий текст в атрибуті data
+    if (!originalText) {
+      originalText = $this.text();
+      $this.data("original-text", originalText); // Зберігаємо текст тільки один раз
+    }
+
+    if ($this.hasClass('on')) {
+      $this.removeClass("on").addClass("off");
+      $this.css("color", "");
+      $this.html(originalText); // Відновлюємо початковий текст
+    } 
+
+    if ($this.hasClass("on")) {
+      $(".off").css("display", "none");
+    } else {
+      $(".off").css("display", "");
+    }
+
+
   });
 });
 
