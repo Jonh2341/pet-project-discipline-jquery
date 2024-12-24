@@ -45,7 +45,34 @@ $(document).ready(function () {
           </div>
         `);
       } else if ($this.hasClass("ai")) {
-        $this.html("<span>New HTML for AI</span>");
+        $this.html(`
+          <div class='ai-wrap'>
+            <span class='title-ai'>How to Properly Formulate Requests</span>
+            <ul class='list-ai'>
+                <li class='list-ai-li'>
+                  Be Specific: 
+                  Try to formulate your requests as specifically as possible. For example, instead of "Tell me about JavaScript" it’s better to ask "How to use the map() function in JavaScript?".
+                </li>
+                <li class='list-ai-li'>
+                  Ask Clear and Simple Questions:
+                  Avoid verbose and complex requests. For example, "How to add an element to an array in JavaScript?" is simpler and more understandable than "Tell me how to add a new element to an existing array in JavaScript".
+                </li>
+                <li class='list-ai-li'>
+                  Add Context:
+                  If your request has a specific context, add it. For example, "I need code for adding an element to an array in JavaScript for a project that works with big data".
+                </li>
+                <li class='list-ai-li'>
+                  Ask for Examples:
+                  Asking for code examples or explanations with examples can be very helpful. For example, "Can you provide an example of using the filter() function in JavaScript?".
+                </li>
+                <li class='list-ai-li'>
+                  Specify Language or Format:
+                  If you want to receive an answer in a specific format or programming language, specify this. For example, "Explain how the reduce() function works in JavaScript and provide an example in Python".
+                </li>
+            </ul>
+            <a href="https://www.microsoft.com/en-us/microsoft-365/copilot" target="_blank" class='ai-link'>Copilot link here</a>
+          </div>
+        `);
       } else if ($this.hasClass("youtube")) {
         $this.html("<span>New HTML for youtube</span>");
       } else if ($this.hasClass("wordwall")) {
