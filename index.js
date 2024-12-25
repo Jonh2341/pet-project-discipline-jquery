@@ -74,7 +74,22 @@ $(document).ready(function () {
           </div>
         `);
       } else if ($this.hasClass("youtube")) {
-        $this.html("<span>New HTML for youtube</span>");
+        $this.html(`
+            <div class='wrap-youtube'>
+              <div class='card-youtube'>
+                <b class='youtube-title'>How to learn anything for 20h</b>
+                <a href='https://www.youtube.com/watch?v=5MgBikgcWnY' class='youtube-link'>link here</a>
+              </div>
+              <div class='card-youtube'>
+                <b class='youtube-title'>How to Get Your Brain to Focus</b>
+                <a href='https://www.youtube.com/watch?v=Hu4Yvq-g7_Y' class='youtube-link'>link here</a>
+              </div>
+              <div class='card-youtube'>
+                <b class='youtube-title'>Think Fast. Talk Smart</b>
+                <a href='https://www.youtube.com/watch?v=o3K_HbpWNpg' class='youtube-link'>link here</a>
+              </div>
+            </div>
+          `);
       } else if ($this.hasClass("wordwall")) {
         $this.html("<span>New HTML for wordwall</span>");
       } else if ($this.hasClass("finance")) {
