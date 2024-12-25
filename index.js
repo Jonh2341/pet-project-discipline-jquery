@@ -91,7 +91,28 @@ $(document).ready(function () {
             </div>
           `);
       } else if ($this.hasClass("wordwall")) {
-        $this.html("<span>New HTML for wordwall</span>");
+        $this.html(`
+            <div class='idea-wrap'>
+              <div class='idea-card'>
+                <span>Pinterest - design ideas</span>
+                <a class='idea-link' href='https://www.pinterest.com/'>link here</a>
+              </div>
+              <div class='idea-card'>
+                <span>Pexels - design material</span>
+                <a class='idea-link' href='https://www.pexels.com/uk-ua/'>link here</a>
+              </div>
+              <div class='idea-card'>
+                <span>Unsplash - design material</span>
+                <a class='idea-link' href='https://unsplash.com/'>link here</a>
+              </div>
+              <div class='idea-write-card'>
+                <label for='idea-writer'>Write your ideas here:</label>
+                <input type='text' id='idea-writer'/>
+                <button type='button' class='idea-btn'>submit</button>
+                <label class='idea-box'></label>
+              </div>
+            </div>
+          `);
       } else if ($this.hasClass("finance")) {
         $this.html("<span>New HTML for finance</span>");
       } else if ($this.hasClass("quote")) {
@@ -146,4 +167,14 @@ $(document).ready(function () {
     let windowCalculator = $('.window-calculator');
     windowCalculator.val('');
   });
+
+  // idea box
+
+  $(document).on('click', '.idea-btn', function () {
+    let inputIdea = $('#idea-writer').val(); // Отримуємо значення з вхідного поля
+    let ideaBox = $('.idea-box');
+    let ideas = ideaBox.append(`<p>${inputIdea}</p>`);
+    console.log(ideas);
+});
+
 });

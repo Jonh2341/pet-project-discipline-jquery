@@ -87,7 +87,7 @@
         padding: 10px;
     }
 
-    .wrap-card, .ai-wrap, .wrap-youtube {
+    .wrap-card, .ai-wrap, .wrap-youtube, .idea-wrap {
         width: 100%;
         height: 100%;
         position: relative;
@@ -218,6 +218,24 @@
 
     .card-youtube:last-child {
         background-image: url('../img/talk.png');
+    }
+
+    .idea-card {
+        margin-bottom: 15px;
+    }
+
+    .idea-write-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #idea-writer, .idea-btn {
+        margin-bottom: 15px;
+    }
+
+    .idea-link {
+        background-color: black;
+        color: white;
     }
 
 }
