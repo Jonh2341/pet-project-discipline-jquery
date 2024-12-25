@@ -115,9 +115,7 @@ $(document).ready(function () {
           `);
       } else if ($this.hasClass("finance")) {
         $this.html("<span>New HTML for finance</span>");
-      } else if ($this.hasClass("quote")) {
-        $this.html("<span>New HTML for quote</span>");
-      } 
+      }
     } else {
       $this.removeClass("on").addClass("off");
       $this.css("color", "");
