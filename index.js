@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // alert('to open card - doubleclick');
   $(".card").on("dblclick", function () {
     let $this = $(this);
     let originalText = $this.data("original-text");
@@ -114,7 +115,33 @@ $(document).ready(function () {
             </div>
           `);
       } else if ($this.hasClass("finance")) {
-        $this.html("<span>New HTML for finance</span>");
+        $this.html(`
+            <div class='finance-wrap'>
+              <div class='title-wrap'>
+                <img src="img/piggy-bank.png" class='icon-finance' alt="*">
+                <h1 class='finance'>Finance</h1>
+                <img src="img/coins.png" class='icon-finance' alt="*">
+              </div>
+              <div class='paper-wrap'>
+                <div class='paper-item'>
+                  <span class='paper-title'>total amount of money</span>
+                  <label class='box-paper amount'></label>
+                  <button type='button' class='btn-paper btn-amount'>Start</button>
+                </div>
+                <div class='paper-item'>
+                  <span class='paper-title'>costs</span>
+                  <label class='box-paper cost'></label>
+                  <button type='button' class='btn-paper btn-cost'>Start</button>
+                </div>
+                <div class='paper-item'>
+                  <span class='paper-title'>earnings</span>
+                  <label class='box-paper earn'></label>
+                  <button type='button' class='btn-paper btn-earn'>Start</button>
+                </div>
+                <p class='total'>total: </p>
+              </div>
+            </div>
+          `);
       }
     } else {
       $this.removeClass("on").addClass("off");
@@ -141,7 +168,7 @@ $(document).ready(function () {
     });
   });
 
-  // Делегування подій для калькулятора
+  // calculator card
   $(document).on('click', '.calculator-item', function () {
     let windowCalculator = $('.window-calculator');
     let value = $(this).text();
@@ -166,13 +193,36 @@ $(document).ready(function () {
     windowCalculator.val('');
   });
 
-  // idea box
+  // idea card
 
   $(document).on('click', '.idea-btn', function () {
     let inputIdea = $('#idea-writer').val(); // Отримуємо значення з вхідного поля
     let ideaBox = $('.idea-box');
     let ideas = ideaBox.append(`<p>${inputIdea}</p>`);
     console.log(ideas);
+  });
+
+  // finance card
+  $(document).on('click', '.btn-paper', function() {
+    let questionFinance = prompt('write here your answer');
+    
+    // Використовуємо `this` для доступу до поточного елементу
+    let paperItem = $(this).closest('.paper-item');
+
+    // Знаходимо елемент та міняємо текст на questionFinance
+    paperItem.find('.box-paper').text(questionFinance);
+
+    // задаємо змінні за допомогою .text()
+    let amount = parseFloat($('.amount').text()) || 0;
+    let earn = parseFloat($('.earn').text()) || 0;
+    let cost = parseFloat($('.cost').text()) || 0;
+
+    // Обчислюємо значення totalFinance
+    if (amount > 0 && earn > 0 && cost > 0) {
+        let totalFinance = amount + earn - cost;
+        $('.paper-wrap').find('.total').append(totalFinance);
+    }
 });
+
 
 });

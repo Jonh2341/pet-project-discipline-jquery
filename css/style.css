@@ -87,7 +87,7 @@
         padding: 10px;
     }
 
-    .wrap-card, .ai-wrap, .wrap-youtube, .idea-wrap {
+    .wrap-card, .ai-wrap, .wrap-youtube, .idea-wrap, .finance-wrap {
         width: 100%;
         height: 100%;
         position: relative;
@@ -236,6 +236,56 @@
     .idea-link {
         background-color: black;
         color: white;
+    }
+
+    .title-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-finance {
+        width: 50px;
+        margin: 15px;
+    }
+
+    .paper-wrap {
+        display: flex;
+        width: 80%;
+        height: 80%;
+        flex-wrap: wrap;
+    }
+
+    .paper-item {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        height: 50%;
+        background-image: url('../img/paper.png');
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-position: center;
+        color: black;
+    }
+
+    .paper-item:nth-child(2) {
+        background-image: url('../img/yellow-paper.png');
+    }
+
+    .paper-item:last-child {
+        background-image: url('../img/green-paper.png');
+    }
+
+    .box-paper {
+        height: 30%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .finance-p {
+        margin: 15px;
     }
 
 }
