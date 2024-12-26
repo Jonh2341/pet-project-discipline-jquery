@@ -224,5 +224,26 @@ $(document).ready(function () {
     }
 });
 
+$('.button-write').on('click', function() {
+  let answerBlock;
 
+  let blockItem = $(this).closest('.block');
+
+  if (blockItem.hasClass('quotes-block')) {
+    answerBlock = prompt('write your quotes:');
+  } else if (blockItem.hasClass('achivement-block')) {
+    answerBlock = prompt('write your achivement:');
+  } else if (blockItem.hasClass('unless-block')) {
+    answerBlock = prompt('write your unless:');
+  } else {
+    answerBlock = prompt('write your answer:');
+  }
+  
+  if(blockItem.hasClass('quotes-block')) {
+    blockItem.find('.block-label').text(`"${answerBlock}"`);
+  } else {
+    blockItem.find('.block-label').text(answerBlock);
+  }
+ 
+});
 });
